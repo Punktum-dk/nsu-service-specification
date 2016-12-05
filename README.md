@@ -66,9 +66,9 @@ The NSU service offers a single capability, handling of redelegation requests.
 
 A request to the service is validated as follows:
 
-1 Parameters are syntactically validated (See: [Form Validation Errors](#form-validation-errors))
-1 Domain name and nameserver are semantically validated (See: [Status Resolution Errors](#status-resolution-errors))
-1 Domain name is resolved towards specified nameserver (See: [DNS Resolution Errors](#dns-resolution-errors))
+1. Parameters are syntactically validated (See: [Form Validation Errors](#form-validation-errors))
+1. Domain name and nameserver are semantically validated (See: [Status Resolution Errors](#status-resolution-errors))
+1. Domain name is resolved towards specified nameserver (See: [DNS Resolution Errors](#dns-resolution-errors))
 
 If the request passes all tests a request is sent to the registrant of the domain name for approval.
 
