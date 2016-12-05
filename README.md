@@ -120,6 +120,8 @@ As described earlier in this document the service can render a fatal error, this
 <a name="parameter-validation-errors"></a>
 ### Parameter Validation Errors
 
+These errors can occur when the submitted data are initially validated
+
 * English: `id field is required`
 * Danish: `id felt er påkrævet`
 
@@ -153,6 +155,8 @@ Please see the required value earlier in this document.
 <a name="semantical-validation-errors"></a>
 ### Semantical Validation Errors
 
+These errors can occur when the specified domain name and nameserver are validated towards the registry.
+
 * English: `Provided domain name is not registered with DK Hostmaster`
 * Danish: `Angivet domæne navn er ikke registreret hos DK Hostmaster`
 
@@ -170,6 +174,8 @@ This error occurs if a domain is the state: `deactivated`
 
 <a name="dns-resolution-errors"></a>
 ### DNS Resolution Errors
+
+These error can occur when the specified domain name and nameserver are attempted resolved using DNS.
 
 * English: `Failed to query nameservers, timed out`
 * Danish: `Forespørgsel mod navneservere fejlede, tidsfrist udløbet`
