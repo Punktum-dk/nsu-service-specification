@@ -174,49 +174,65 @@ This error occurs if a domain is the state: `deactivated`
 * English: `Failed to query nameservers, timed out`
 * Danish: `Forespørgsel mod navneservere fejlede, tidsfrist udløbet`
 
+
 * English: `Unable to resolve nameserver`
 * Danish: `Ikke muligt at slå nameserver op`
+
 
 * English: `No nameservers supplied`
 * Danish: `Ingen nameservers angivet`
 
+
 * English: `No nameserver host info`
 * Danish: `Ingen nameserver værts info`
+
 
 * English: `No NS info on host`
 * Danish: `Ingen NS info på vært`
 
+
 * English: `Too few hosts`
 * Danish: `For få værter`
+
 
 * English: `Too many hosts`
 * Danish: `For mange værter`
 
+
 * English: `Host is missing NS record when compared to other responses`
 * Danish: `Vært mangler NS optegnelse når sammenlignet med andre svar`
+
 
 * English: `Host has extra NS record when compared to other responses`
 * Danish: `Vært har ekstra NS optegnelse når sammenlignet med andre svar`
 
+
 * English: `SOA Serial mismatch between responses`
 * Danish: `SOA serienummer misforhold mellem svar`
+
 
 * English: `No nameservers found`
 * Danish: `Ingen navne servere fundet`
 
+
 * English: `Host has alternating SOA serial between queries`
 * Danish: `Vært har skiftedne SOA serienummer mellem forespørgsler`
+
 
 * English: `IP address missing in nameserver IP address response`
 * Danish: `IP adresse mangler i nameserver IP adresse svar`
 
+
 * English: `Nameserver response contains non-public IP address`
 * Danish: `Nameserver svar indeholder ikke-offentlig IP adresse`
 
+
 * English: `Failed to query nameservers`
 * Danish: `Fejlede forespørgsel mod navneservere`
+
 
 * English: `Resolved nameserver not registered with DK Hostmaster`
 * Danish: `Lokaliseret navneserver ikke registreret hos DK Hostmaster`
 
 [nsu_anonymous_redelegation]: https://raw.githubusercontent.com/DK-Hostmaster/nsu-service-specification/master/images/nsu_anonymous_redelegation_1.0.png
+qui
