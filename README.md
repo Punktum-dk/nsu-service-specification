@@ -235,4 +235,3 @@ This error occurs if a domain is the state: `deactivated`
 * Danish: `Lokaliseret navneserver ikke registreret hos DK Hostmaster`
 
 [nsu_anonymous_redelegation]: https://raw.githubusercontent.com/DK-Hostmaster/nsu-service-specification/master/images/nsu_anonymous_redelegation_1.0.png
-qui
