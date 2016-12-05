@@ -72,6 +72,8 @@ A request to the service is validated as follows:
 
 If the request passes all tests a request is sent to the registrant of the domain name for approval.
 
+In addition to the above error categories the service can render a fatal error, this error occurs only if key resources like database access etc. are not available or other circumstances rendering the service is a critical state.
+
 <a name="resources"></a>
 # Resources
 
