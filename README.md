@@ -13,8 +13,8 @@
     - [Issue Reporting](#issue-reporting)
 - [Appendices](#appendices)
     - [Error Messages](#error-messages)
-        - [Form Validation Errors](#form-validation-errors)
-        - [Status Resolution Errors](#status-resolution-errors)
+        - [Parameter Validation Errors](#parameter-validation-errors)
+        - [Semantical Validation Errors](#semantical-validation-errors)
         - [DNS Resolution Errors](#dns-resolution-errors)
 
 <!-- /MarkdownTOC -->
@@ -60,24 +60,40 @@ The service is not subject to any sorts of standards.
 <a name="the-ns-update-service"></a>
 # The NS Update Service
 
-The NSU service offers a single capability, handling of redelegation requests.
+The NSU service offers a single capability, handling of redelegation requests. The service supports danish and english.
 
 ![diagram of anonymous redelegation proces][nsu_anonymous_redelegation]
 
 A request to the service is validated as follows:
 
-1. Parameters are syntactically validated (See: [Form Validation Errors](#form-validation-errors))
-1. Domain name and nameserver are semantically validated (See: [Status Resolution Errors](#status-resolution-errors))
+1. Parameters are syntactically validated (See: [Parameter Validation Errors](#parameter-validation-errors))
+1. Domain name and nameserver fields are semantically validated (See: [Semantical Validation Errors](#semantical-validation-errors))
 1. Domain name is resolved towards specified nameserver (See: [DNS Resolution Errors](#dns-resolution-errors))
 
 If the request passes all tests a request is sent to the registrant of the domain name for approval.
+
+The following text string is returned if the request was successfully created:
+
+* English: `Request submitted`
+* Danish: `Redelegeringsanmodning afsendt`
+
+The request requires the following fields:
+
+* `id` - has to hold the value of either: `52` (danish) or `250` (english)
+* `domain` - has to hold a domain name registered with DK Hostmaster, the domain name cannot be in a state of: `deactivated`
+* `nameserver` - has to hold a host name registered with DK Hostmaster and the nameserver has to be active
+* `redel` - has to hold the value `true`
+* `redel` - has to hold the value `true`
+* `submit` - has to hold the value of either: `bekræft` (danish) or `confirm` (english)
+
+Some of the fields are insignificant for the actual proces, but are required to ensure backwards compability.
 
 In addition to the above error categories the service can render a fatal error, this error occurs only if key resources like database access etc. are not available or other circumstances rendering the service is a critical state.
 
 <a name="resources"></a>
 # Resources
 
-Resources for DK Hostmaster NSU are listed below.
+Resources for the DK Hostmaster NSU services are listed below.
 
 <a name="mailing-list"></a>
 ## Mailing list
@@ -91,7 +107,7 @@ DK Hostmaster operates a mailing list for discussion and inquiries  about the DK
 
 For issue reporting related to this specification, the DSU implementation or sandbox or production environments, please contact us. You are of course welcome to post these to the mailing list mentioned above, otherwise use the address specified below:
 
- * `info@dk-hostmaster.dk`
+* `info@dk-hostmaster.dk`
 
 <a name="appendices"></a>
 # Appendices
@@ -99,47 +115,108 @@ For issue reporting related to this specification, the DSU implementation or san
 <a name="error-messages"></a>
 ## Error Messages
 
-<a name="form-validation-errors"></a>
-### Form Validation Errors
+As described earlier in this document the service can render a fatal error, this error occurs only if key resources like database access etc. are not available or other circumstances rendering the service is a critical state, this category of errors are not listed below.
 
-`[$field] field not specified`
+<a name="parameter-validation-errors"></a>
+### Parameter Validation Errors
 
-<a name="status-resolution-errors"></a>
-### Status Resolution Errors
+* English: `id field is required`
+* Danish: `id felt er påkrævet`
 
-`Domain name is not in a state eligible for redelegation`
+Please see the required value earlier in this document.
+
+* English: `confirm field is required`
+* Danish: `confirm felt er påkrævet`
+
+Please see the required value earlier in this document.
+
+* English: `redel field is required`
+* Danish: `redel felt er påkrævet`
+
+Please see the required value earlier in this document.
+
+* English: `domain field is required`
+* Danish: `domain felt er påkrævet`
+
+Please see the required value earlier in this document.
+
+* English: `nameserver field is required`
+* Danish: `nameserver felt er påkrævet`
+
+Please see the required value earlier in this document.
+
+* English: `submit field is required`
+* Danish: `submit felt er påkrævet`
+
+Please see the required value earlier in this document.
+
+<a name="semantical-validation-errors"></a>
+### Semantical Validation Errors
+
+* English: `Provided domain name is not registered with DK Hostmaster`
+* Danish: `Angivet domæne navn er ikke registreret hos DK Hostmaster`
+
+This error occurs if the specified domain name is not registered with DK Hostmaster, please register the domain name via a registrar or specify a registered domain name for which the operation is relevant.
+
+* English: `Provided nameserver is not registered with DK Hostmaster` 
+* Danish: `Angivet navneserver er ikke registreret hos DK Hostmaster`
+
+This error occurs if the specified host is not registered with DK Hostmaster, either register the host using our self-service platform or EPP service or specify a registered nameserver for which the operation is relevant.
+
+* English: `Domain name is not in a state eligible for redelegation`
+* Danish: `Domænenavn er ikke i en tilstand som kan redelegeres`
+
+This error occurs if a domain is the state: `deactivated`
 
 <a name="dns-resolution-errors"></a>
 ### DNS Resolution Errors
 
-`Failed to query nameservers, timed out`
+* English: `Failed to query nameservers, timed out`
+* Danish: `Forespørgsel mod navneservere fejlede, tidsfrist udløbet`
 
-`Unable to resolve nameserver`
+* English: `Unable to resolve nameserver`
+* Danish: `Ikke muligt at slå nameserver op`
 
-`No nameservers supplied`
+* English: `No nameservers supplied`
+* Danish: `Ingen nameservers angivet`
 
-`No nameserver host info`
+* English: `No nameserver host info`
+* Danish: `Ingen nameserver værts info`
 
-`No NS info on host`
+* English: `No NS info on host`
+* Danish: `Ingen NS info på vært`
 
-`Too few hosts`
+* English: `Too few hosts`
+* Danish: `For få værter`
 
-`Too many hosts`
+* English: `Too many hosts`
+* Danish: `For mange værter`
 
-`Host is missing NS record when compared to other responses`
+* English: `Host is missing NS record when compared to other responses`
+* Danish: `Vært mangler NS optegnelse når sammenlignet med andre svar`
 
-`SOA Serial mismatch between responses`
+* English: `Host has extra NS record when compared to other responses`
+* Danish: `Vært har ekstra NS optegnelse når sammenlignet med andre svar`
 
-`No nameservers found`
+* English: `SOA Serial mismatch between responses`
+* Danish: `SOA serienummer misforhold mellem svar`
 
-`Host has alternating SOA serial between queries`
+* English: `No nameservers found`
+* Danish: `Ingen navne servere fundet`
 
-`IP address missing in nameserver IP address response`
+* English: `Host has alternating SOA serial between queries`
+* Danish: `Vært har skiftedne SOA serienummer mellem forespørgsler`
 
-`Nameserver response contains non-public IP address`
+* English: `IP address missing in nameserver IP address response`
+* Danish: `IP adresse mangler i nameserver IP adresse svar`
 
-`Failed to query nameservers`
+* English: `Nameserver response contains non-public IP address`
+* Danish: `Nameserver svar indeholder ikke-offentlig IP adresse`
 
-`Resolved nameserver not registered with DK Hostmaster A/S`
+* English: `Failed to query nameservers`
+* Danish: `Fejlede forespørgsel mod navneservere`
+
+* English: `Resolved nameserver not registered with DK Hostmaster`
+* Danish: `Lokaliseret navneserver ikke registreret hos DK Hostmaster`
 
 [nsu_anonymous_redelegation]: https://raw.githubusercontent.com/DK-Hostmaster/nsu-service-specification/master/images/nsu_anonymous_redelegation_1.0.png
