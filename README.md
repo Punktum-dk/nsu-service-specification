@@ -8,6 +8,9 @@
     - [Document History](#document-history)
 - [The .dk Registry in Brief](#the-dk-registry-in-brief)
 - [The NS Update Service](#the-ns-update-service)
+    - [Examples](#examples)
+        - [Using `curl`](#using-curl)
+        - [Using `httpie`](#using-httpie)
 - [Resources](#resources)
     - [Public Service Page](#public-service-page)
     - [Mailing list](#mailing-list)
@@ -90,6 +93,32 @@ The request requires the following fields:
 Some of the fields are insignificant for the actual proces, but are required to ensure backwards compability.
 
 In addition to the above error categories the service can render a fatal error, this error occurs only if key resources like database access etc. are not available or other circumstances rendering the service is a critical state.
+
+<a name="examples"></a>
+## Examples
+
+A populated URL:
+
+```
+https://ns-update.dk-hostmaster.dk/english/self-service/redelegate-domain-name/?id=250&redel=true&domain=eksempel.dk&nameserver=ns1.hostname.com&confirm=true
+```
+
+The pages returned are fully rendered HTML pages for human interpretation.
+
+<a name="using-curl"></a>
+### Using `curl`
+
+```bash
+$ curl --get https://ns-update.dk-hostmaster.dk/en/ -d id=250 -d redel=true -d domain=eksempel.dk -d nameserver=ns1.hostname.com -d confirm=true -d submit=confirm
+```
+
+<a name="using-httpie"></a>
+### Using `httpie`
+
+```bash
+$ http "https://ns-update.dk-hostmaster.dk/en/?id=250&redel=true&domain=eksempel.dk&nameserver=ns1.hostname.com&confirm=true"
+```
+
 
 <a name="resources"></a>
 # Resources
