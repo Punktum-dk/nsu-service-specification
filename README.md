@@ -9,6 +9,7 @@
 - [The .dk Registry in Brief](#the-dk-registry-in-brief)
 - [The NS Update Service](#the-ns-update-service)
 - [Resources](#resources)
+    - [Public Service Page](#public-service-page)
     - [Mailing list](#mailing-list)
     - [Issue Reporting](#issue-reporting)
 - [Appendices](#appendices)
@@ -94,6 +95,11 @@ In addition to the above error categories the service can render a fatal error, 
 # Resources
 
 Resources for the DK Hostmaster NSU services are listed below.
+
+<a name="public-service-page"></a>
+## Public Service Page
+
+* https://www.dk-hostmaster.dk/en/anonymous-redelegation
 
 <a name="mailing-list"></a>
 ## Mailing list
