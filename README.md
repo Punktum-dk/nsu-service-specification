@@ -4,22 +4,22 @@
 
 - [Introduction](#introduction)
 - [About this Document](#about-this-document)
-    - [License](#license)
-    - [Document History](#document-history)
+	- [License](#license)
+	- [Document History](#document-history)
 - [The .dk Registry in Brief](#the-dk-registry-in-brief)
 - [The NS Update Service](#the-ns-update-service)
-    - [Examples](#examples)
-        - [Using `curl`](#using-curl)
-        - [Using `httpie`](#using-httpie)
+	- [Examples](#examples)
+		- [Using `curl`](#using-curl)
+		- [Using `httpie`](#using-httpie)
 - [Resources](#resources)
-    - [Public Service Page](#public-service-page)
-    - [Mailing list](#mailing-list)
-    - [Issue Reporting](#issue-reporting)
+	- [Public Service Page](#public-service-page)
+	- [Mailing list](#mailing-list)
+	- [Issue Reporting](#issue-reporting)
 - [Appendices](#appendices)
-    - [Error Messages](#error-messages)
-        - [Parameter Validation Errors](#parameter-validation-errors)
-        - [Semantical Validation Errors](#semantical-validation-errors)
-        - [DNS Resolution Errors](#dns-resolution-errors)
+	- [Error Messages](#error-messages)
+		- [Parameter Validation Errors](#parameter-validation-errors)
+		- [Semantical Validation Errors](#semantical-validation-errors)
+		- [DNS Resolution Errors](#dns-resolution-errors)
 
 <!-- /MarkdownTOC -->
 
@@ -86,7 +86,6 @@ The request requires the following fields:
 * `id` - has to hold the value of either: `52` (danish) or `250` (english)
 * `domain` - has to hold a domain name registered with DK Hostmaster, the domain name cannot be in a state of: `deactivated`
 * `nameserver` - has to hold a host name registered with DK Hostmaster and the nameserver has to be active
-* `redel` - has to hold the value `true`
 * `redel` - has to hold the value `true`
 * `submit` - has to hold the value of either: `bekræft` (danish) or `confirm` (english)
 
