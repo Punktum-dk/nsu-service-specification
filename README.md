@@ -1,3 +1,5 @@
+![DK Hostmaster Logo](https://www.dk-hostmaster.dk/sites/default/files/dk-logo_0.png)
+
 # NSU Service and Protocol 1.0 Specification
 
 <!-- MarkdownTOC depth=3 -->
@@ -26,7 +28,7 @@
 <a name="introduction"></a>
 # Introduction
 
-NSU is short for NS Update. NSU is a propriety protocol and service developed and offered by DK Hostmaster's as an interface for updating the relationship between nameservers and .dk domainnames. 
+NSU is short for NS Update. NSU is a propriety protocol and service developed and offered by DK Hostmaster's as an interface for updating the relationship between nameservers and .dk domainnames.
 
 The protocol is based on HTTP og the parameters are transferred as GET-variables. The response contains an HTTP header and a brief message for human interpretation.
 
@@ -196,7 +198,7 @@ These errors can occur when the specified domain name and nameserver are validat
 
 This error occurs if the specified domain name is not registered with DK Hostmaster, please register the domain name via a registrar or specify a registered domain name for which the operation is relevant.
 
-* English: `Provided nameserver is not registered with DK Hostmaster` 
+* English: `Provided nameserver is not registered with DK Hostmaster`
 * Danish: `Angivet navneserver er ikke registreret hos DK Hostmaster`
 
 This error occurs if the specified host is not registered with DK Hostmaster, either register the host using our self-service platform or EPP service or specify a registered nameserver for which the operation is relevant.
