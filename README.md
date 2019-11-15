@@ -2,6 +2,13 @@
 
 # NSU Service and Protocol 1.0 Specification
 
+![GitHub Workflow build status badge markdownlint](https://github.com/DK-Hostmaster/nsu-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
+
+2015-07-04
+Revision: 1.0
+
+# Table of Contents
+
 <!-- MarkdownTOC bracket=round levels="1,2,3,4" indent="  " autolink="true" autoanchor="true" -->
 
 - [Introduction](#introduction)
