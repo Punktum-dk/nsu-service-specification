@@ -1,6 +1,6 @@
 ![DK Hostmaster Logo](https://www.dk-hostmaster.dk/sites/default/files/dk-logo_0.png)
 
-# NSU Service and Protocol 1.1 Specification
+# NSU Service and Protocol 1.0 Specification
 
 ![GitHub Workflow build status badge markdownlint](https://github.com/DK-Hostmaster/nsu-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
 
