@@ -66,7 +66,7 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
   - These new error scenarios is introduced in NSU service version 2.0.0
 
 - 1.0 2015-07-04
-  - Initial revision on Github
+  - Initial revision on GitHub
 
 <a id="the-dk-registry-in-brief"></a>
 # The .dk Registry in Brief
