@@ -1,11 +1,11 @@
 ![DK Hostmaster Logo](https://www.dk-hostmaster.dk/sites/default/files/dk-logo_0.png)
 
-# NSU Service and Protocol 1.0 Specification
+# NSU Service and Protocol 1.1 Specification
 
 ![GitHub Workflow build status badge markdownlint](https://github.com/DK-Hostmaster/nsu-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
 
-2015-07-04
-Revision: 1.0
+2021-09-17
+Revision: 2.0
 
 # Table of Contents
 
@@ -57,6 +57,13 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
 
 <a id="document-history"></a>
 ## Document History
+
+- 2.0 2021-09-17
+  - Added two new error scenarios for:
+    - Domain names under registrar management
+    - Domain names with VID
+    - Change of name servers cannot be initiated from the NSU service with the new change of name servers process
+  - These new error scenarios is introduced in NSU service version 2.0.0
 
 - 1.0 2015-07-04
   - Initial revision on Github
@@ -209,6 +216,18 @@ This error occurs if the specified host is not registered with DK Hostmaster, ei
 - Danish: `Domænenavn er ikke i en tilstand som kan redelegeres`
 
 This error occurs if a domain is the state: `deactivated`
+
+- English: `Provided domain name can not be a VID domain`
+- Danish: `Domænet må ikke være et VID domæne`
+
+This error is emmitted in case the domain name is a VID domain name, meaning the service only works for registrant managed regular domain names.
+
+Name server changes for VID domains has to use a name server change process implemented in a service which support authentication, like SB supplemented with EPP and RP.
+
+- English: `Provided domain name may not be registrar handled`
+- Danish: `Domænet må ikke være forhandler håndteret`
+
+Domain names under registrar management can only have their names services changed via a service which support authentication, like SB supplemented with EPP and RP.
 
 <a id="dns-resolution-errors"></a>
 ### DNS Resolution Errors
