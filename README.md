@@ -4,8 +4,8 @@
 
 ![GitHub Workflow build status badge markdownlint](https://github.com/DK-Hostmaster/nsu-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
 
-2021-09-17
-Revision: 2.0
+2021-09-30
+Revision: 2.1
 
 # Table of Contents
 
@@ -58,6 +58,9 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
 <a id="document-history"></a>
 ## Document History
 
+- 2.1 2021-09-30
+  - Specified section on the execution and the deletion of DSRECORDs
+
 - 2.0 2021-09-17
   - Added two new error scenarios for:
     - Domain names under registrar management
@@ -106,6 +109,8 @@ The request requires the following fields:
 Some of the fields are insignificant for the actual proces, but are required to ensure backwards compability.
 
 In addition to the above error categories the service can render a fatal error, this error occurs only if key resources like database access etc. are not available or other circumstances rendering the service is a critical state.
+
+When the registrant or proxy approves the request the change is completed. Any possible DSRECORDs will be deleted as part of the change.
 
 <a id="examples"></a>
 ## Examples
