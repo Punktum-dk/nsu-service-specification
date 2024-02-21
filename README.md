@@ -1,8 +1,6 @@
-![DK Hostmaster Logo](https://www.dk-hostmaster.dk/sites/default/files/dk-logo_0.png)
-
 # NSU Service and Protocol 1.0 Specification
 
-![GitHub Workflow build status badge markdownlint](https://github.com/DK-Hostmaster/nsu-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
+![GitHub Workflow build status badge markdownlint](https://github.com/Punktum-dk/nsu-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
 
 2021-09-30
 Revision: 2.1
@@ -35,7 +33,7 @@ Revision: 2.1
 <a id="introduction"></a>
 # Introduction
 
-NSU is short for NS Update. NSU is a propriety protocol and service developed and offered by DK Hostmaster's as an interface for updating the relationship between nameservers and .dk domainnames.
+NSU is short for NS Update. NSU is a propriety protocol and service developed and offered by Punktum dk's as an interface for updating the relationship between nameservers and .dk domainnames.
 
 The protocol is based on HTTP og the parameters are transferred as GET-variables. The response contains an HTTP header and a brief message for human interpretation.
 
@@ -48,12 +46,12 @@ To use NSU, send an SSL-encrypted HTTP GET request to the following address:
 
 This specification describes the current implementation.
 
-Printable version can be obtained via [this link](https://gitprint.com/DK-Hostmaster/nsu-service-specification/blob/master/README.md), using the gitprint service.
+Printable version can be obtained via [this link](https://gitprint.com/Punktum-dk/nsu-service-specification/blob/master/README.md), using the gitprint service.
 
 <a id="license"></a>
 ## License
 
-This document is copyright by DK Hostmaster A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
+This document is copyright by Punktum dk A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
 
 <a id="document-history"></a>
 ## Document History
@@ -74,7 +72,7 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
 <a id="the-dk-registry-in-brief"></a>
 # The .dk Registry in Brief
 
-DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model used in Denmark is based on a sole registry, with DK Hostmaster maintaining the central DNS registry.
+Punktum dk is the registry for the ccTLD for Denmark (dk). The current model used in Denmark is based on a sole registry, with Punktum dk maintaining the central DNS registry.
 
 The service is not subject to any sorts of standards.
 
@@ -101,8 +99,8 @@ The following text string is returned if the request was successfully created:
 The request requires the following fields:
 
 - `id` - has to hold the value of either: `52` (danish) or `250` (english)
-- `domain` - has to hold a domain name registered with DK Hostmaster, the domain name cannot be in a state of: `deactivated`
-- `nameserver` - has to hold a host name registered with DK Hostmaster and the nameserver has to be active
+- `domain` - has to hold a domain name registered with Punktum dk, the domain name cannot be in a state of: `deactivated`
+- `nameserver` - has to hold a host name registered with Punktum dk and the nameserver has to be active
 - `redel` - has to hold the value `true`
 - `submit` - has to hold the value of either: `bekræft` (danish) or `confirm` (english)
 
@@ -138,26 +136,12 @@ $ http "https://ns-update.dk-hostmaster.dk/en/?id=250&redel=true&domain=eksempel
 <a id="resources"></a>
 # Resources
 
-Resources for the DK Hostmaster NSU services are listed below.
-
-<a id="public-service-page"></a>
-## Public Service Page
-
-- [NSU Service White paper](https://www.dk-hostmaster.dk/en/anonymous-redelegation)
-
-<a id="mailing-list"></a>
-## Mailing list
-
-DK Hostmaster operates a mailing list for discussion and inquiries  about the DK Hostmaster NSU service and technical issues in general. To subscribe to this list, write to the address below and follow the instructions. Please note that the list is for technical discussion only, any issues beyond the technical scope will not be responded to, please send these to the contact issue reporting address below and they will be passed on to the appropriate entities within DK Hostmaster A/S.
-
-- `tech-discuss+subscribe@liste.dk-hostmaster.dk`
+Resources for the Punktum dk NSU services are listed below.
 
 <a id="issue-reporting"></a>
 ## Issue Reporting
 
-For issue reporting related to this specification, the DSU implementation or sandbox or production environments, please contact us. You are of course welcome to post these to the mailing list mentioned above, otherwise use the address specified below:
-
-- `info@dk-hostmaster.dk`
+For issue reporting related to this specification, the DSU implementation or sandbox or production environments, please contact us.
 
 <a id="appendices"></a>
 # Appendices
@@ -207,15 +191,15 @@ Please see the required value earlier in this document.
 
 These errors can occur when the specified domain name and nameserver are validated towards the registry.
 
-- English: `Provided domain name is not registered with DK Hostmaster`
-- Danish: `Angivet domæne navn er ikke registreret hos DK Hostmaster`
+- English: `Provided domain name is not registered with Punktum dk`
+- Danish: `Angivet domæne navn er ikke registreret hos Punktum dk`
 
-This error occurs if the specified domain name is not registered with DK Hostmaster, please register the domain name via a registrar or specify a registered domain name for which the operation is relevant.
+This error occurs if the specified domain name is not registered with Punktum dk, please register the domain name via a registrar or specify a registered domain name for which the operation is relevant.
 
-- English: `Provided nameserver is not registered with DK Hostmaster`
-- Danish: `Angivet navneserver er ikke registreret hos DK Hostmaster`
+- English: `Provided nameserver is not registered with Punktum dk`
+- Danish: `Angivet navneserver er ikke registreret hos Punktum dk`
 
-This error occurs if the specified host is not registered with DK Hostmaster, either register the host using our self-service platform or EPP service or specify a registered nameserver for which the operation is relevant.
+This error occurs if the specified host is not registered with Punktum dk, either register the host using our self-service platform or EPP service or specify a registered nameserver for which the operation is relevant.
 
 - English: `Domain name is not in a state eligible for redelegation`
 - Danish: `Domænenavn er ikke i en tilstand som kan redelegeres`
@@ -284,7 +268,7 @@ These error can occur when the specified domain name and nameserver are attempte
 - English: `Failed to query nameservers`
 - Danish: `Fejlede forespørgsel mod navneservere`
 
-- English: `Resolved nameserver not registered with DK Hostmaster`
-- Danish: `Lokaliseret navneserver ikke registreret hos DK Hostmaster`
+- English: `Resolved nameserver not registered with Punktum dk`
+- Danish: `Lokaliseret navneserver ikke registreret hos Punktum dk`
 
-[nsu_anonymous_redelegation]: https://raw.githubusercontent.com/DK-Hostmaster/nsu-service-specification/master/images/nsu_anonymous_redelegation_1.0.png
+[nsu_anonymous_redelegation]: https://raw.githubusercontent.com/Punktum-dk/nsu-service-specification/master/images/nsu_anonymous_redelegation_1.0.png
